@@ -1,8 +1,18 @@
 def sponge_case(sentence):
-    # Write your solution here!
-    pass
+    result = []
 
+    for word in sentence.split():
+        new_word = ''
+    
+        for i in range(len(word)):
+            if i % 2 == 0:
+                new_word += word[i].lower()
+            else:
+                new_word += word[i].upper()
 
+        result.append(new_word)
+
+    return ' '.join(result)
 
 # Test cases
 assert sponge_case("spongebob") == "sPoNgEbOb"
